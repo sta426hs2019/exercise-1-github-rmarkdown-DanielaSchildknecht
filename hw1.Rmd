@@ -1,0 +1,33 @@
+
+---
+title: "HW1"
+author: "Daniela Schildknecht"
+date: "September 24, 2019"
+output: html_document
+---
+
+
+100 values are drawn from a lognormal distribution with mu = 1 and sigma = 0.25.
+
+```{r sampling}
+
+samples <- rlnorm(n = 100, meanlog = 1, sdlog = 0.25)
+```
+```{r hist, fig.show='hide'}
+hist <- hist(samples)
+hist$counts <- log10(hist$counts)
+```
+```{r plot histogram}
+plot(hist, xlab = "x", ylab = "log Frequency", main = "Histogram of samples drawn from log normal distribution")
+
+```
+
+The mean of the samples is
+```{r}
+mean(samples)
+
+```
+and the variance of the samples is
+```{r}
+var(samples)
+```
